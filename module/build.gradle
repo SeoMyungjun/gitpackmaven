@@ -48,6 +48,9 @@ dependencies {
 
     implementation 'com.github.jitpack:android-example:1.0.1'
 
+    implementation 'com.mapbox.maps:android:10.16.1'
+
+
 }
 // Because the components are created only during the afterEvaluate phase, you must
 // configure your publications using the afterEvaluate() lifecycle method.
@@ -60,18 +63,41 @@ afterEvaluate {
                 from components.release
 
                 // You can then customize attributes of the publication as shown below.
-                groupId = 'com.routo.gitpackmaven'
+                groupId = 'com.github.SeoMyungjun'
                 artifactId = 'final'
-                version = '1.0.0'
+                version = '1.0.3'
+                pom.withXml {
+//                    def dependencies = asNode().appendNode('dependencies')
+//                    configurations.compile.allDependencies.each {
+//                        def dependency = dependencies.appendNode('dependency')
+//                        dependency.appendNode('groupId', "com.mapbox.maps")
+//                        dependency.appendNode('artifactId', "android")
+//                        dependency.appendNode('version', "10.16.1")
+//                    }
+//
+//                    final licenseNode = mainNode.appendNode('licenses').appendNode('license')
+//                    licenseNode.appendNode('name', project.ext.mapboxArtifactLicenseName)
+//                    licenseNode.appendNode('url', project.ext.mapboxArtifactLicenseUrl)
+//                    licenseNode.appendNode('distribution', "repo")
+//
+//                    final developerNode = mainNode.appendNode('developers').appendNode('developer')
+//                    developerNode.appendNode('id', project.ext.mapboxDeveloperId)
+//                    developerNode.appendNode('name', project.ext.mapboxDeveloperName)
+//
+//                    final scmNode = mainNode.appendNode("scm")
+//                    scmNode.appendNode("connection", project.ext.mapboxArtifactScmUrl)
+//                    scmNode.appendNode("developerConnection", project.ext.mapboxArtifactScmUrl)
+//                    scmNode.appendNode("url", project.ext.mapboxArtifactUrl)
+                }
             }
             // Creates a Maven publication called “debug”.
             debug(MavenPublication) {
                 // Applies the component for the debug build variant.
                 from components.debug
 
-                groupId = 'com.routo.gitpackmaven'
+                groupId = 'com.github.SeoMyungjun'
                 artifactId = 'final-debug'
-                version = '1.0.0'
+                version = '1.0.3'
             }
         }
     }
