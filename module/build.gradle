@@ -48,7 +48,7 @@ dependencies {
 
     implementation 'com.github.jitpack:android-example:1.0.1'
 
-    implementation 'com.mapbox.maps:android:10.16.1'
+    //implementation 'com.mapbox.maps:android:10.16.1'
 
 
 }
